@@ -1,6 +1,6 @@
 *.class
-target
-.classpath
-.project
-pom
-test
+target/
+*.classpath
+*.project
+pom.xml
+test/
