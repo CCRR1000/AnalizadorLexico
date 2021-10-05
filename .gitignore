@@ -1,6 +1,6 @@
 *.class
-lib
-target
+lib/
+target/
 pom.xml
-.classpath
-.project
+*.classpath
+*.project
