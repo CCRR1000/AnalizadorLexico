@@ -2,9 +2,7 @@
 package funcionalidad;
 
 import java.util.ArrayList;
-import elementos.ErrorLexico;
-import elementos.TipoToken;
-import elementos.Token;
+import elementos.*;
 
 public class Analizador {
     

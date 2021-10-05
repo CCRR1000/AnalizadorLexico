@@ -47,7 +47,7 @@ public class Lexema {
             int contador = 0;
             for (int j = 0; j < listaLexemas.size(); j++) {
 
-                if (Busqueda.sonIguales(listaTokens.get(i).getLexema(), listaLexemas.get(j).getCadena())) {
+                if (Busqueda.iguales(listaTokens.get(i).getLexema(), listaLexemas.get(j).getCadena())) {
                     listaLexemas.get(j).aumentarRepeticiones();
                     break;
                 } else {

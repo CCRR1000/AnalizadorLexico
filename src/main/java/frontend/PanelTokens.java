@@ -8,8 +8,7 @@ package frontend;
 import funcionalidad.Analizador;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import elementos.Lexema;
-import elementos.Token;
+import elementos.*;
 
 /**
  *

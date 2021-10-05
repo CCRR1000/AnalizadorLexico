@@ -9,10 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.DefaultHighlighter;
-import javax.swing.text.Highlighter;
-import javax.swing.text.Highlighter.HighlightPainter;
+import javax.swing.text.*;
 
 /**
  *
@@ -42,7 +39,7 @@ public class Busqueda {
                     cadena = (cadena + textoBusqueda.charAt(indice));
                     inicio[j] = indice;
 
-                    if (sonIguales(cadena, palabraBuscar)) {
+                    if (iguales(cadena, palabraBuscar)) {
                         try {
                             resaltado.addHighlight(inicio[0], inicio[palabraBuscar.length() - 1] + 1, resaltador);
                         } catch (BadLocationException ex) {
@@ -56,7 +53,7 @@ public class Busqueda {
         }
     }
 
-    public static boolean sonIguales(String cadena1, String cadena2) {
+    public static boolean iguales(String cadena1, String cadena2) {
         
         if (cadena1.length() == cadena2.length()) {            
             for (int i = 0; i < cadena1.length(); i++) {                
