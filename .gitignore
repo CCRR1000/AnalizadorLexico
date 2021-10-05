@@ -1,0 +1,6 @@
+*.class
+lib
+target
+pom.xml
+.classpath
+.project

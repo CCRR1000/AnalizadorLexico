@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package funcionalidad;
 
 import java.awt.Color;
@@ -43,7 +40,7 @@ public class Busqueda {
                         try {
                             resaltado.addHighlight(inicio[0], inicio[palabraBuscar.length() - 1] + 1, resaltador);
                         } catch (BadLocationException ex) {
-                            JOptionPane.showMessageDialog(null, "No se pudo resaltar la palabra");
+                            JOptionPane.showMessageDialog(null, "No se pudo resaltar la palabra" + ex.getMessage());
                         }
                     }
                     contador++;

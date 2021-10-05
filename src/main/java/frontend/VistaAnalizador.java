@@ -316,11 +316,12 @@ public class VistaAnalizador extends javax.swing.JFrame {
     int tFilas = 0;
     private void actualizarNumeroFila() {
             
-            tFilas = jTextAreaEdicion.getLineCount();
-            numeracionArea.setText("");
-            for (int i = 0; i < tFilas; i++) {
-                numeracionArea.append(" "+(i+1)+"\n");
-            }
+        //tFilas = jTextAreaEdicion.getLineCount();
+        numeracionArea.setText("");
+        for (int i = 0; i < jTextAreaEdicion.getLineCount(); i++) {
+        //for (int i = 0; i < tFilas; i++) {
+            numeracionArea.append("\n "+(i+1));
+        }
 
     }
     
