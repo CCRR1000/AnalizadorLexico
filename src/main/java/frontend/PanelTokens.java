@@ -88,6 +88,7 @@ public class PanelTokens extends javax.swing.JPanel {
 
         jPanelToken.setLayout(new java.awt.GridLayout(1, 0));
 
+        jTableTokens.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jTableTokens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -112,6 +113,7 @@ public class PanelTokens extends javax.swing.JPanel {
 
         jPanelLexema.setLayout(new java.awt.GridLayout(1, 0));
 
+        jTableLexemas.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jTableLexemas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -133,7 +135,7 @@ public class PanelTokens extends javax.swing.JPanel {
 
         jPanelLexema.add(jScrollPane2);
 
-        jTabbedPane1.addTab("Lexemas", jPanelLexema);
+        jTabbedPane1.addTab("Recuento de Lexemas", jPanelLexema);
 
         jPanelTransiciones.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -145,7 +147,7 @@ public class PanelTokens extends javax.swing.JPanel {
 
         jPanelTransiciones.add(jScrollPane3);
 
-        jTabbedPane1.addTab("Transiciones", jPanelTransiciones);
+        jTabbedPane1.addTab("Consola de Transiciones", jPanelTransiciones);
 
         jLblTitulo.setFont(new java.awt.Font("Corbel Light", 1, 16)); // NOI18N
         jLblTitulo.setForeground(new java.awt.Color(255, 255, 255));

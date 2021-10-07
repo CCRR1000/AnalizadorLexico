@@ -72,6 +72,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="jTableTokens">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Consolas" size="12" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="0">
                         <Column editable="false" title="Token" type="java.lang.Object"/>
@@ -116,8 +119,8 @@
         <Container class="javax.swing.JPanel" name="jPanelLexema">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Lexemas">
-                <Property name="tabTitle" type="java.lang.String" value="Lexemas"/>
+              <JTabbedPaneConstraints tabName="Recuento de Lexemas">
+                <Property name="tabTitle" type="java.lang.String" value="Recuento de Lexemas"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -136,6 +139,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="jTableLexemas">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Consolas" size="12" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="3" rowCount="0">
                         <Column editable="false" title="Lexema" type="java.lang.Object"/>
@@ -175,8 +181,8 @@
         <Container class="javax.swing.JPanel" name="jPanelTransiciones">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Transiciones">
-                <Property name="tabTitle" type="java.lang.String" value="Transiciones"/>
+              <JTabbedPaneConstraints tabName="Consola de Transiciones">
+                <Property name="tabTitle" type="java.lang.String" value="Consola de Transiciones"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>

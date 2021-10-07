@@ -16,25 +16,28 @@ public class Analizador {
         listaErrores.clear();
         transiciones = ("\n  TRANSICIONES EN EL AUTOMATA:\n  ---------------------------\n\n");    
         String cadena = "";
-        int estadoActual = 0;
+        int estadoActual = 0, fila = 1, columna = 1, filaCadena, colCadena;
         
         for (int i = 0; i < texto.length(); i++) {
 
+            
+            
             if ((texto.charAt(i) != ' ') && (texto.charAt(i) != '\n')) {
+                
                 this.addTransicion("  S" + estadoActual + "  ->");
                 estadoActual = Automata.nuevoEstado(texto.charAt(i), estadoActual);
                 cadena += texto.charAt(i);
                 this.addTransicion("  " + texto.charAt(i) + "  ->  S" + estadoActual + "\n");
 
                 if (estadoActual == -1) {
-                    System.out.println(cadena + " -> Error lexico");
-                    ErrorLexico erl = new ErrorLexico(cadena, 0, 0);
+                    
+                    ErrorLexico erl = new ErrorLexico(cadena, fila, columna, "Error léxico");
                     listaErrores.add(erl);
                     estadoActual = 0;
                     cadena = "";
                 } else if (estadoActual == -5) {
-                    System.out.println(cadena + " -> Error: No se reconoce el simbolo (" + texto.charAt(i) + ")");
-                    listaErrores.add(new ErrorLexico(cadena, 0, 0));
+                    
+                    listaErrores.add(new ErrorLexico(cadena, fila, columna, "Símbolo no admitido"));
                     estadoActual = 0;
                     cadena = "";
                 }
@@ -45,7 +48,8 @@ public class Analizador {
 
                     for (TipoToken tk : TipoToken.values()) {
                         if (tk.getEstadoAcept() == estadoActual) {
-                            Token nuevoToken = new Token(cadena, tk, 0, 0);
+                            int columnaToken = columna - cadena.length();
+                            Token nuevoToken = new Token(cadena, tk, fila, columnaToken);
                             listaTokens.add(nuevoToken);
 
                             this.addTransicion("  Token: " + nuevoToken.getTipoToken().name() + ",   Lexema: " 
@@ -58,6 +62,13 @@ public class Analizador {
 
                 }
             }
+            
+            if (texto.charAt(i) == '\n') {
+                fila++;
+                columna = 0;
+            }
+
+            columna++;
         }
 
     }

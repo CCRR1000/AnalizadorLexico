@@ -34,6 +34,7 @@ public class PanelErrores extends javax.swing.JPanel {
         modeloTablaError.addColumn("Cadena");
         modeloTablaError.addColumn("Fila");
         modeloTablaError.addColumn("Columna");
+        modeloTablaError.addColumn("Descripcion");
 
         this.jTableTokens.setModel(modeloTablaError);        
     }
@@ -64,6 +65,7 @@ public class PanelErrores extends javax.swing.JPanel {
 
         jPanelError.setLayout(new java.awt.GridLayout(1, 0));
 
+        jTableTokens.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jTableTokens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

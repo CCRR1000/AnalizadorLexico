@@ -66,9 +66,6 @@ public class Automata {
                         SiguienteEstado = 4;
                     }
                     break;
-                case (5 | 6 | 7):
-                    SiguienteEstado = 0;
-                    break;
             }
 
         }

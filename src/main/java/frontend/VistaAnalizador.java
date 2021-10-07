@@ -64,7 +64,6 @@ public class VistaAnalizador extends javax.swing.JFrame {
         jButtonAbrir = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
         jButtonAnalizar = new javax.swing.JButton();
-        jButtonLexemasTalvez = new javax.swing.JButton();
         jPanelBuscar = new javax.swing.JPanel();
         jTextFieldBuscar = new javax.swing.JTextField();
         jButtonBuscar = new javax.swing.JButton();
@@ -73,6 +72,7 @@ public class VistaAnalizador extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Analizador Léxico");
         setBackground(new java.awt.Color(0, 0, 0));
 
         jPanelGeneral.setBackground(new java.awt.Color(50, 50, 50));
@@ -99,7 +99,7 @@ public class VistaAnalizador extends javax.swing.JFrame {
 
         jPanelResultados.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanelResultados.setOpaque(false);
-        jPanelResultados.setLayout(new java.awt.GridLayout());
+        jPanelResultados.setLayout(new java.awt.GridLayout(1, 0));
         jPanelCentral.add(jPanelResultados);
 
         jPanelGeneral.add(jPanelCentral, java.awt.BorderLayout.CENTER);
@@ -114,11 +114,26 @@ public class VistaAnalizador extends javax.swing.JFrame {
         jPanelBotones.setOpaque(false);
         jPanelBotones.setLayout(new javax.swing.BoxLayout(jPanelBotones, javax.swing.BoxLayout.LINE_AXIS));
 
-        jButtonNuevo.setText("New");
+        jButtonNuevo.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonNuevo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonNuevo.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/images/Nuevo.png"))); // NOI18N
+        jButtonNuevo.setText("Nuevo  ");
+        jButtonNuevo.setBorder(null);
         jButtonNuevo.setPreferredSize(new java.awt.Dimension(72, 30));
+        jButtonNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNuevoActionPerformed(evt);
+            }
+        });
         jPanelBotones.add(jButtonNuevo);
 
-        jButtonAbrir.setText("Open");
+        jButtonAbrir.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonAbrir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonAbrir.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/images/Abrir.png"))); // NOI18N
+        jButtonAbrir.setText("Abrir  ");
+        jButtonAbrir.setBorder(null);
         jButtonAbrir.setPreferredSize(new java.awt.Dimension(72, 30));
         jButtonAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,11 +142,21 @@ public class VistaAnalizador extends javax.swing.JFrame {
         });
         jPanelBotones.add(jButtonAbrir);
 
-        jButtonGuardar.setText("Save");
+        jButtonGuardar.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonGuardar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/images/Guardar.png"))); // NOI18N
+        jButtonGuardar.setText("Guardar  ");
+        jButtonGuardar.setBorder(null);
         jButtonGuardar.setPreferredSize(new java.awt.Dimension(72, 30));
         jPanelBotones.add(jButtonGuardar);
 
-        jButtonAnalizar.setText("Check");
+        jButtonAnalizar.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonAnalizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonAnalizar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAnalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/images/Analizar.png"))); // NOI18N
+        jButtonAnalizar.setText("Analizar  ");
+        jButtonAnalizar.setBorder(null);
         jButtonAnalizar.setPreferredSize(new java.awt.Dimension(72, 30));
         jButtonAnalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,29 +165,27 @@ public class VistaAnalizador extends javax.swing.JFrame {
         });
         jPanelBotones.add(jButtonAnalizar);
 
-        jButtonLexemasTalvez.setText("Lexem");
-        jButtonLexemasTalvez.setPreferredSize(new java.awt.Dimension(72, 30));
-        jPanelBotones.add(jButtonLexemasTalvez);
-
-        jPanelHeader.add(jPanelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 40));
+        jPanelHeader.add(jPanelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
 
         jPanelBuscar.setBackground(new java.awt.Color(0, 153, 51));
         jPanelBuscar.setOpaque(false);
         jPanelBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextFieldBuscar.setPreferredSize(new java.awt.Dimension(100, 20));
-        jPanelBuscar.add(jTextFieldBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 200, -1));
+        jPanelBuscar.add(jTextFieldBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 200, 30));
 
-        jButtonBuscar.setText("Find");
+        jButtonBuscar.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/images/Buscar.png"))); // NOI18N
+        jButtonBuscar.setBorder(null);
         jButtonBuscar.setPreferredSize(new java.awt.Dimension(60, 30));
         jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBuscarActionPerformed(evt);
             }
         });
-        jPanelBuscar.add(jButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, 20));
+        jPanelBuscar.add(jButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 50, 50));
 
-        jPanelHeader.add(jPanelBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 340, 40));
+        jPanelHeader.add(jPanelBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 340, 50));
 
         javax.swing.GroupLayout jPanelSuperiorLayout = new javax.swing.GroupLayout(jPanelSuperior);
         jPanelSuperior.setLayout(jPanelSuperiorLayout);
@@ -176,7 +199,8 @@ public class VistaAnalizador extends javax.swing.JFrame {
             jPanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSuperiorLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
-                .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanelGeneral.add(jPanelSuperior, java.awt.BorderLayout.PAGE_START);
@@ -242,8 +266,6 @@ public class VistaAnalizador extends javax.swing.JFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         
-        //Busqueda busqueda = new Busqueda();
-        
         if (jTextFieldBuscar.getText().isEmpty() || jTextAreaEdicion.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "NO HAY TEXTO PARA REALIZAR LA BUSQUEDA");
         } else {
@@ -273,6 +295,7 @@ public class VistaAnalizador extends javax.swing.JFrame {
 
     private void jTextAreaEdicionCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_jTextAreaEdicionCaretUpdate
         int pos = evt.getDot(); //mira los pasos del puntero
+
 //        try {
 //            int fil = jTextArea1.getLineOfOffset(pos) + 1; //devuelve la fila
 //            int col = pos - jTextArea1.getLineStartOffset(fil - 1) + 1; //devuelve la columna
@@ -284,6 +307,12 @@ public class VistaAnalizador extends javax.swing.JFrame {
 //            System.out.println(exc);
 //        }
     }//GEN-LAST:event_jTextAreaEdicionCaretUpdate
+
+    private void jButtonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuevoActionPerformed
+        //Preguntar si desea guardar el anterior
+        
+        jTextAreaEdicion.setText("");
+    }//GEN-LAST:event_jButtonNuevoActionPerformed
 
    
     private void manejarPaneles() {
@@ -320,7 +349,8 @@ public class VistaAnalizador extends javax.swing.JFrame {
         numeracionArea.setText("");
         for (int i = 0; i < jTextAreaEdicion.getLineCount(); i++) {
         //for (int i = 0; i < tFilas; i++) {
-            numeracionArea.append("\n "+(i+1));
+            numeracionArea.append(" "+(i+1)+"\n");
+            
         }
 
     }
@@ -333,7 +363,7 @@ public class VistaAnalizador extends javax.swing.JFrame {
         numeracionArea.setBackground(new Color(50, 50, 50));
         numeracionArea.setForeground(Color.GRAY);        
         numeracionArea.setEditable(false);
-        numeracionArea.append("1");
+        numeracionArea.append(" 1");
         
         return numeracionArea;
     }
@@ -343,7 +373,6 @@ public class VistaAnalizador extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAnalizar;
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JButton jButtonLexemasTalvez;
     private javax.swing.JButton jButtonNuevo;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

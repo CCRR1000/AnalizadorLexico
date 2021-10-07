@@ -30,7 +30,7 @@ public class ManejoArchivos {
                 String linea;
                 txArea.setText("");
                 while ((linea = br.readLine()) != null) {
-                    txArea.append("\n" + linea);
+                    txArea.append(linea + "\n");
                 }
                 fr.close();
             } catch (FileNotFoundException ex) {

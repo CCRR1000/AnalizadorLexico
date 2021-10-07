@@ -35,6 +35,7 @@ public class PanelBusquedaResultados extends javax.swing.JPanel {
         jLblTitulo.setText("Resultados de Búsqueda");
         jLblTitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        jTextAreaBusqueda.setEditable(false);
         jTextAreaBusqueda.setColumns(20);
         jTextAreaBusqueda.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         jTextAreaBusqueda.setRows(5);

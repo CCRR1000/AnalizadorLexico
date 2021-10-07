@@ -16,34 +16,30 @@ public class Busqueda {
 
     public static void buscar(JTextArea jTextArea, String palabraBuscar) {
 
-        DefaultHighlighter.DefaultHighlightPainter resaltador = new DefaultHighlighter.DefaultHighlightPainter(new Color(255, 155, 0));
+        DefaultHighlighter.DefaultHighlightPainter resaltador = new DefaultHighlighter.DefaultHighlightPainter(new Color(255, 205, 155));
         Highlighter resaltado = jTextArea.getHighlighter();
         resaltado.removeAllHighlights();
 
         String textoBusqueda = jTextArea.getText();
-        int contador, indice;
+        int indice;
 
         for (int i = 0; i < textoBusqueda.length()- palabraBuscar.length() + 1; i++) {
 
-            contador = 0;
             indice = i;
             String cadena = "";
-            int[] inicio = new int[palabraBuscar.length()];
             
             for (int j = 0; j < palabraBuscar.length(); j++) {
 
                 if (textoBusqueda.charAt(indice) == palabraBuscar.charAt(j)) {
                     cadena = (cadena + textoBusqueda.charAt(indice));
-                    inicio[j] = indice;
 
                     if (iguales(cadena, palabraBuscar)) {
                         try {
-                            resaltado.addHighlight(inicio[0], inicio[palabraBuscar.length() - 1] + 1, resaltador);
+                            resaltado.addHighlight(i, i+palabraBuscar.length(), resaltador);
                         } catch (BadLocationException ex) {
                             JOptionPane.showMessageDialog(null, "No se pudo resaltar la palabra" + ex.getMessage());
                         }
                     }
-                    contador++;
                 }
                 indice++;
             }

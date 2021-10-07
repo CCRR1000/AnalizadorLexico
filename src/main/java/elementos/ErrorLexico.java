@@ -3,25 +3,27 @@ package elementos;
 
 public class ErrorLexico {
 
-    private String cadena;
+    private String cadena, descripcion;
     private int fila, columna;
 
     public ErrorLexico(String cadena) {
         this.setCadena(cadena);
     }
 
-    public ErrorLexico(String cadena, int fila, int columna) {
+    public ErrorLexico(String cadena, int fila, int columna, String descripcion) {
         this.setCadena(cadena);
         this.setFila(fila);
         this.setColumna(columna);
+        this.setDescripcion(descripcion);
     }
 
     public Object[] getArray() {
         
-        Object[] arrayError = new Object[3];
+        Object[] arrayError = new Object[4];
         arrayError[0] = this.getCadena();
         arrayError[1] = this.getFila();
         arrayError[2] = this.getColumna();
+        arrayError[3] = this.getDescripcion();
         
         return arrayError;
     }
@@ -48,6 +50,14 @@ public class ErrorLexico {
 
     public void setCadena(String cadena) {
         this.cadena = cadena;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override
