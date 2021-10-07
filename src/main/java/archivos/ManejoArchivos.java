@@ -7,6 +7,8 @@ package archivos;
 
 import java.awt.*;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -15,14 +17,17 @@ import javax.swing.*;
  */
 public class ManejoArchivos {
 
+    //private static JFileChooser fileChosser = new JFileChooser();
+    public static File archivo;
+
     public static void abrirArchivo(Container container, JTextArea txArea) {
-        
+
         JFileChooser fileChosser = new JFileChooser();
         int seleccion = fileChosser.showOpenDialog(container);
-        
+
         if (seleccion == JFileChooser.APPROVE_OPTION) {
-            
-            File archivo = fileChosser.getSelectedFile();
+
+            archivo = fileChosser.getSelectedFile();
             FileReader fr;
             try {
                 fr = new FileReader(archivo);
@@ -41,4 +46,34 @@ public class ManejoArchivos {
 
         }
     }
+
+    public static void guardarArchivo(Component container, JTextArea txArea){
+
+        try {
+
+            if (archivo!=null) {
+
+                BufferedWriter bw = new BufferedWriter(new FileWriter(archivo));
+                bw.write(txArea.getText());
+                bw.close();
+
+            } else {
+                JFileChooser fileChosser = new JFileChooser();
+                fileChosser.showSaveDialog(container);
+                archivo = new File(fileChosser.getSelectedFile() + ".txt");
+                
+
+                BufferedWriter bw = new BufferedWriter(new FileWriter(archivo));
+                bw.write(txArea.getText());
+                bw.close();
+
+            }
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+    
+
 }

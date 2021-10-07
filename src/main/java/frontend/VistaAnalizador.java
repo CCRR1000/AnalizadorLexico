@@ -20,6 +20,7 @@ import javax.swing.SwingConstants;
 import javax.swing.text.BadLocationException;
 import elementos.ErrorLexico;
 import elementos.Token;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 /**
  *
@@ -158,6 +159,11 @@ public class VistaAnalizador extends javax.swing.JFrame {
         jButtonGuardar.setText("Guardar  ");
         jButtonGuardar.setBorder(null);
         jButtonGuardar.setPreferredSize(new java.awt.Dimension(72, 30));
+        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGuardarActionPerformed(evt);
+            }
+        });
         jPanelBotones.add(jButtonGuardar);
 
         jButtonAnalizar.setBackground(new java.awt.Color(51, 51, 51));
@@ -319,10 +325,15 @@ public class VistaAnalizador extends javax.swing.JFrame {
 
     private void jButtonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuevoActionPerformed
         //Preguntar si desea guardar el anterior
-        
         jTextAreaEdicion.setText("");
+        ManejoArchivos.archivo = null;
         jButtonAnalizarActionPerformed(evt);
     }//GEN-LAST:event_jButtonNuevoActionPerformed
+
+    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
+
+            ManejoArchivos.guardarArchivo(this, jTextAreaEdicion);      
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
 
    
     private void manejarPaneles() {
