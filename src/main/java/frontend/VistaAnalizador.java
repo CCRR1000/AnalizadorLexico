@@ -20,6 +20,7 @@ import javax.swing.SwingConstants;
 import javax.swing.text.BadLocationException;
 import elementos.ErrorLexico;
 import elementos.Token;
+import javax.swing.ImageIcon;
 /**
  *
  * @author CIROSS
@@ -36,11 +37,19 @@ public class VistaAnalizador extends javax.swing.JFrame {
         
         setLocationRelativeTo(null);
         setResizable(false);
-        
+        getIcono();
         numeracionArea = new JTextArea();
         jScrollPane.setRowHeaderView(mostrarNumeroFilas());      
         
         
+    }
+    
+    /**
+     * Método que asigna el ícono general del juego
+     */
+    public void getIcono(){
+        ImageIcon icono = new ImageIcon(getClass().getResource("/frontend/images/AnalizarIcon.png"));
+        setIconImage(icono.getImage());
     }
 
     /**
@@ -312,6 +321,7 @@ public class VistaAnalizador extends javax.swing.JFrame {
         //Preguntar si desea guardar el anterior
         
         jTextAreaEdicion.setText("");
+        jButtonAnalizarActionPerformed(evt);
     }//GEN-LAST:event_jButtonNuevoActionPerformed
 
    
